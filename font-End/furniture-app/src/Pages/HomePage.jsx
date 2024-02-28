@@ -7,11 +7,15 @@ import Testimonial from '../Component/Testimonial';
 import Contact from '../Component/Contact';
 import Footer from '../Component/Footer';
 import Catalog from '../Component/Catalog';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+
 
 const HomePage = () => {
 
     return (
     <div>
+        
         <NavBar/>
         <Home/>
         <Catalog/>

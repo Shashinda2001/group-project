@@ -1,13 +1,27 @@
+import React from 'react';
 import './App.css';
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from './Pages/HomePage';
-
+import SignForm from './Pages/SignForm';
+import LoginForm from './Pages/LoginForm';
+import About from './Component/About';
+import Contact from './Component/Contact';
+import Testimonial from './Component/Testimonial';
 
 function App() {
   return (
-    <div className="App">
-     <HomePage/>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+         <Route path="/About" element={<About/>} />
+         <Route path="/Contact" element={<Contact/>} />
+          <Route path="/Testimonial" element={<Testimonial />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/SignForm" element={<SignForm />} />
+          <Route path="/LoginForm" element={<LoginForm />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
