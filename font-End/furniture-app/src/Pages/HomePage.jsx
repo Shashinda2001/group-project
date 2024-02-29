@@ -7,6 +7,10 @@ import Testimonial from '../Component/Testimonial';
 import Contact from '../Component/Contact';
 import Footer from '../Component/Footer';
 import Catalog from '../Component/Catalog';
+import Product from '../Component/Product';
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+ 
+ 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
@@ -19,6 +23,7 @@ const HomePage = () => {
         <NavBar/>
         <Home/>
         <Catalog/>
+        <Product/>
         <About/>
         <Work/>
         <Testimonial/>
