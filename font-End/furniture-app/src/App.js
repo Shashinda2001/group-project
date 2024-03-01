@@ -7,6 +7,7 @@ import LoginForm from './Pages/LoginForm';
 import About from './Component/About';
 import Contact from './Component/Contact';
 import Testimonial from './Component/Testimonial';
+import ForgotPassword from './Pages/ForgotPassword';
  
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/SignForm" element={<SignForm />} />
           <Route path="/LoginForm" element={<LoginForm />} />
+          <Route path="/ForgotPassword" element={<ForgotPassword />} />
+
         </Routes>
       </div>
     </Router>
