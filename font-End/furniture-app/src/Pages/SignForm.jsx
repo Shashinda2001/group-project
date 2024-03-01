@@ -35,10 +35,9 @@ export default  function SignForm(){
           <div className="left_div">
               <img src={signcover} alt="logo img" />
               <div className='img_div_box'>
-                  <h2>Turn Your Ideas In to Real...</h2>
-                  <p>start for free and get attractive with the community </p>
-                   
-              </div>
+                    <h2>Join for Exclusive Benefits...</h2>
+                    <p>Join our community, connect with enthusiasts, and access exclusive offers. Register now to turn your design dreams into reality!</p>
+                </div>
           </div>
 
           <div className="right_div">
@@ -53,7 +52,7 @@ export default  function SignForm(){
 
                    
 
-                  <button style={{background:"rgba(15, 17, 17, 0.7)",color:"white"}} type='submit'>signIn</button>
+                  <button style={{background:"rgba(15, 17, 17, 0.7)",color:"white"}} type='submit'>Register</button>
                   
                   <button style={{color:"red",border:"none"}}  onClick={()=>{navigate('/')}}>Home Page</button>
                    
