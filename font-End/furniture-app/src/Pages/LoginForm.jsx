@@ -3,6 +3,11 @@ import axios from "axios";
 import login2 from "../Assets/login1.jpg";
 import "../css/register.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import { jwtDecode } from "jwt-decode";
+
+
 
 export default function LoginForm() {
   let navigate = useNavigate();
@@ -42,6 +47,10 @@ export default function LoginForm() {
      
       const token = response.data.accessToken;
       console.log(token);
+      localStorage.setItem('token', token);
+
+            const decoded = jwtDecode(token);
+            console.log(decoded.role);
       
 
       // Assuming successful login navigates to dashboard
