@@ -9,7 +9,7 @@ import About from './Component/About';
 import Contact from './Component/Contact';
 import Testimonial from './Component/Testimonial';
 import ForgotPassword from './Pages/ForgotPassword';
-import Checkout from './Pages/Checkout';
+ 
  
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           <Route path="/Testimonial" element={<Testimonial />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
-          <Route path="/Checkout" element={<Checkout />} />
+          
           <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/SignForm" element={<SignForm />} />
         </Routes>

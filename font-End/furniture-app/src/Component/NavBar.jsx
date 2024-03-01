@@ -25,7 +25,7 @@ import { useNavigate } from 'react-router-dom';
 // import LoginForm from '../Pages/LoginForm';
 // eslint-disable-next-line no-unused-vars
 import LoginForm from '../Pages/LoginForm';
-import Checkout from '../Pages/Checkout';
+ 
 import { jwtDecode } from "jwt-decode";
 import AdminPanel from '../Pages/AdminPanel';
 
@@ -97,7 +97,7 @@ const NavBar = () => {
                  {/* check admin or user start */}
                     {(role === "USER" || role === "") && (
                         
-                            <a onClick={() => navigate('/Checkout')}>
+                            <a onClick={() => navigate('/')}>
                                 <BsCart2 className='navbar-cart-icon'/>
                             </a> 
                              
