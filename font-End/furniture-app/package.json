@@ -17,13 +17,6 @@
     "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-<<<<<<< HEAD
-=======
-    "react-icons": "^5.0.1",
-    "react-router-dom": "^6.22.2",
-    "stream-browserify": "^3.0.0",
-    "util": "^0.12.5",
->>>>>>> 85e592837d0ea7430b0e5cf89a40d149d56994c4
     "web-vitals": "^2.1.4"
   },
   "scripts": {
