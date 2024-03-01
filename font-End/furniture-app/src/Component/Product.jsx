@@ -9,14 +9,14 @@ function Product() {
   const imagePath ="";
   const [products,setProducts]=useState([]);
 
-    useEffect(()=>{
-        loadProducts();
-    },[]);
+//     useEffect(()=>{
+//         loadProducts();
+//     },[]);
 
- const loadProducts=async ()=>{
-    const result= await axios.get("http://localhost:8090/products");
-    setProducts(result.data);
- }
+//  const loadProducts=async ()=>{
+//     const result= await axios.get("http://localhost:8090/products");
+//     setProducts(result.data);
+//  }
 
 
 
