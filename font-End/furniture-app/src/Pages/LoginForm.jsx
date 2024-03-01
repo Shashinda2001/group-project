@@ -43,10 +43,9 @@ export default function LoginForm() {
         <div className='main_container'>
             <div className="left_div">
                 <img src={login2} alt="logo img" />
-                <div className='img_div_box'>
-                    <h2>Turn Your Ideas In to Real...</h2>
-                    <p>start for free and get attractive with the community </p>
-                     
+                <div className="img_div_box">
+                  <h2>Turn Your Ideas Into Real...</h2>
+                  <p>Discover elite furniture, connect with enthusiasts, and access exclusive offers by signing in today!</p>
                 </div>
             </div>
 
