@@ -40,7 +40,7 @@ function Product() {
    <div className="col-md-3" style={{ marginTop: '20px', marginBottom: '20px' }}>
    <div className="card flex">
    
-     <img imgAddress={"../Assets/"+product.productImage} className="card-img-top" alt="Item Image" style={{  maxWidth: '100%' }} />
+     <img imgAddress={"./images/"+product.productImage} className="card-img-top" alt="Item Image" style={{  maxWidth: '100%' }} />
      
 
 
