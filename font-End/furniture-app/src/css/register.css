@@ -26,9 +26,14 @@
 }
 .main_container .left_div .img_div_box{
     position: absolute;
-    top: 20vh;
-    left: 12vw;
+    top: 14vh;
+    left: 10vw;
     color: wheat;
+    width: 35vw;
+}
+.main_container .left_div .img_div_box h2{
+    font-size: 50px;
+    margin-bottom: 5vh;
 }
 .main_container .right_div{
     height: 100%;
