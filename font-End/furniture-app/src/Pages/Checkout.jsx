@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/checkout.css";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ name, image, price, onIncrease, onDecrease, quantity }) => (
   <div style={{ margin: "10px", padding: "10px" }} className="product">

@@ -25,6 +25,7 @@ import { useNavigate } from 'react-router-dom';
 // import LoginForm from '../Pages/LoginForm';
 // eslint-disable-next-line no-unused-vars
 import LoginForm from '../Pages/LoginForm';
+import Checkout from '../Pages/Checkout';
 
 
 const NavBar = () => {
@@ -69,7 +70,7 @@ const NavBar = () => {
                 <a onClick={()=>{navigate('/About')}}>About</a>
                 <a onClick={()=>{navigate('/Testimonial')}}>Testimonials</a>
                 <a onClick={()=>{navigate('/Contact')}}>Contact</a>
-                <a href="hh">
+                <a onClick={()=>{navigate('/Checkout')}}>
                     <BsCart2 className='navbar-cart-icon'/>
                 </a> 
                 <a href="hh">
