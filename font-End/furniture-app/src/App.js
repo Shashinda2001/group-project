@@ -8,6 +8,7 @@ import About from './Component/About';
 import Contact from './Component/Contact';
 import Testimonial from './Component/Testimonial';
 import ForgotPassword from './Pages/ForgotPassword';
+import Checkout from './Pages/Checkout';
  
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Routes>
          <Route path="/About" element={<About/>} />
          <Route path="/Contact" element={<Contact/>} />
+         <Route path="/Checkout" element={<Checkout/>} />
           <Route path="/Testimonial" element={<Testimonial />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/SignForm" element={<SignForm />} />
