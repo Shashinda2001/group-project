@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.movieflix</groupId>
-	<artifactId>movieApi</artifactId>
+	<artifactId>furnitureApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>MovieAPI</name>
 	<description>Spring Boot project for building Restful Movie API</description>
