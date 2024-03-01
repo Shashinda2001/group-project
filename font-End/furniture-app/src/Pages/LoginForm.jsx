@@ -37,7 +37,7 @@ export default function LoginForm() {
 
       // Backend validation
       const response = await axios.post(
-        "http://localhost:8080/api/v1/auth/login",
+        "http://localhost:8090/api/v1/auth/login",
         {
           email: user.email,
           password: user.password,
@@ -53,8 +53,8 @@ export default function LoginForm() {
             console.log(decoded.role);
       
 
-      // Assuming successful login navigates to dashboard
-      // navigate("/About");
+      //Assuming successful login navigates to dashboard
+      navigate("/");
     } catch (error) {
       console.error("Error occurred while logging in:", error);
       if (error.response && error.response.data) {

@@ -35,3 +35,34 @@ const About = () => {
 };
 
 export default About;
+
+
+// import React, { useEffect, useState } from "react";
+// import { jwtDecode } from "jwt-decode";
+ 
+
+
+// export default function About() {
+//   const [email, setEmail] = useState("");
+
+//   useEffect(() => {
+//     // Retrieve the token from localStorage
+//     const token = localStorage.getItem("token");
+
+//     // Decode the token to extract email
+//     if (token) {
+//       const decoded = jwtDecode(token);
+//       setEmail(decoded.sub);
+//     }
+//   }, []);
+
+//   return (
+//     <div>
+//       <h1>Email: {email}</h1>
+//       {/* Other components or logic */}
+//     </div>
+//   );
+// }
+
+
+ 

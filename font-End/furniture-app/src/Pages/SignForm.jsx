@@ -56,7 +56,7 @@ export default function SignForm() {
             }
             
             // If no validation errors, submit the form
-            await axios.post("http://localhost:8080/api/v1/auth/register", {
+            await axios.post("http://localhost:8090/api/v1/auth/register", {
                 username: user.username,
                 email: user.email,
                 password: user.password,
