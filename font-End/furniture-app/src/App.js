@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 
-=======
 import React from 'react';
->>>>>>> 85e592837d0ea7430b0e5cf89a40d149d56994c4
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from './Pages/HomePage';
@@ -17,27 +14,20 @@ import Checkout from './Pages/Checkout';
 
 function App() {
   return (
-<<<<<<< HEAD
     <div className="App">
-      
-    </div>
-=======
-    <Router>
-      <div>
+      <Router>
         <Routes>
-         <Route path="/About" element={<About/>} />
-         <Route path="/Contact" element={<Contact/>} />
-         <Route path="/Checkout" element={<Checkout/>} />
-          <Route path="/Testimonial" element={<Testimonial />} />
           <Route path="/" element={<HomePage />} />
-          <Route path="/SignForm" element={<SignForm />} />
-          <Route path="/LoginForm" element={<LoginForm />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Testimonial" element={<Testimonial />} />
+          <Route path="/Contact" element={<Contact />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
-
+          <Route path="/Checkout" element={<Checkout />} />
+          <Route path="/LoginForm" element={<LoginForm />} />
+          <Route path="/SignForm" element={<SignForm />} />
         </Routes>
-      </div>
-    </Router>
->>>>>>> 85e592837d0ea7430b0e5cf89a40d149d56994c4
+      </Router>
+    </div>
   );
 }
 
