@@ -1,5 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
+ 
+import React, { useEffect, useState } from "react";
 import Logo from "../Assets/Logo.svg";
 import {BsCart2} from "react-icons/bs"
 import {BsHeart} from "react-icons/bs"
@@ -25,10 +25,33 @@ import { useNavigate } from 'react-router-dom';
 // import LoginForm from '../Pages/LoginForm';
 // eslint-disable-next-line no-unused-vars
 import LoginForm from '../Pages/LoginForm';
-import Checkout from '../Pages/Checkout';
+ 
+import { jwtDecode } from "jwt-decode";
+import AdminPanel from '../Pages/AdminPanel';
 
 
 const NavBar = () => {
+
+
+    const [role, setRole] = useState("");
+    ////
+    useEffect(() => {
+        // Retrieve the token from localStorage
+        const token = localStorage.getItem("token");
+    
+        // Decode the token to extract email
+        if (token) {
+          const decoded = jwtDecode(token);
+          setRole(decoded.role);
+        }
+        else{
+            setRole("");  
+        }
+      }, []);
+
+
+
+    ///   
     let navigate=useNavigate();
     
     const [openMenu,setOpenMenu]=useState(false);
@@ -70,12 +93,40 @@ const NavBar = () => {
                 <a onClick={()=>{navigate('/About')}}>About</a>
                 <a onClick={()=>{navigate('/Testimonial')}}>Testimonials</a>
                 <a onClick={()=>{navigate('/Contact')}}>Contact</a>
-                <a onClick={()=>{navigate('/Checkout')}}>
-                    <BsCart2 className='navbar-cart-icon'/>
-                </a> 
-                <a href="hh">
-                    <BsHeart className='navbar-cart-icon'/>
-                </a> 
+                 
+                 {/* check admin or user start */}
+                    {(role === "USER" || role === "") && (
+                        
+                            <a onClick={() => navigate('/')}>
+                                <BsCart2 className='navbar-cart-icon'/>
+                            </a> 
+                             
+                         
+                    )}
+
+                    {(role === "USER" || role === "") && (
+                        
+                         
+                        <a href="hh">
+                            <BsHeart className='navbar-cart-icon'/>
+                        </a> 
+                     
+                )}
+
+
+                
+                    {role === "ADMIN" && (
+                                        // <div>
+                                            <a onClick={() => navigate('/AdminPanel')}>
+                                                <BsCart2 className='navbar-cart-icon'/>
+                                            </a> 
+                                            
+                                        // </div>
+                                    )}
+
+                     {/* check admin or user end */}
+
+                
                 <button className='primary-button' onClick={()=>{navigate('/LoginForm')}}>Login Now</button>
             </div>
             <div className='navbar-menu-container'>

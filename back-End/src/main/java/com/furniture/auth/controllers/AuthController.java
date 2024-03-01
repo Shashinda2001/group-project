@@ -64,9 +64,6 @@ public class AuthController {
         String username = registerRequest.getUsername();
 
 
-
-
-
         Optional<User> existingUserOptional = userRepository.findByEmail(email);
         if (existingUserOptional.isPresent()) {
             // If the email already exists, return a response indicating that
