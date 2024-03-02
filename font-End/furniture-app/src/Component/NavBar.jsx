@@ -22,6 +22,7 @@ import HeartBrokenRoundedIcon from "@mui/icons-material/HeartBrokenRounded";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import AdminPanel from "../Pages/AdminPanel";
+import ShoppingCart from "../Pages/ShoppingCart";
 
 const NavBar = () => {
   const [role, setRole] = useState("");
@@ -68,7 +69,7 @@ const NavBar = () => {
 
           {(role === "USER" || role === "") && (
             <>
-              <a onClick={() => navigate("/card")}>
+              <a onClick={() => navigate("/ShoppingCart")}>
                 <BsCart2 className="navbar-cart-icon" />
               </a>
 
