@@ -9,6 +9,7 @@ import About from './Component/About';
 import Contact from './Component/Contact';
 import Testimonial from './Component/Testimonial';
 import ForgotPassword from './Pages/ForgotPassword';
+import AdminPanel from './Pages/AdminPanel';
  
  
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/Testimonial" element={<Testimonial />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
+          <Route path="/AdminPanel" element={<AdminPanel/>} />
           
           <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/SignForm" element={<SignForm />} />
