@@ -85,7 +85,7 @@ public class AuthController {
         int otp = otpGenerator();
         MailBody mailBody = MailBody.builder()
                 .to(email)
-                .text("Click the following link to Verify Your Email: <a href='http://localhost:8080/userVerification/verifyOtp/" + otp + "/" + email + "'>Verify Your Email</a>")
+                .text("Click the following link to Verify Your Email: <a href='http://localhost:8090/userVerification/verifyOtp/" + otp + "/" + email + "'>Verify Your Email</a>")
                 .subject("Verification email")
                 .build();
 
