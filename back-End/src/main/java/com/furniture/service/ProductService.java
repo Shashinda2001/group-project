@@ -18,6 +18,10 @@ public class ProductService {
         Product product = new Product();
         product.setName(productDTO.getName());
         product.setPrice(productDTO.getPrice());
+        product.setCategory(productDTO.getCategory());
+        product.setProductDescription(productDTO.getProductDescription());
+        product.setImageName(productDTO.getImageName());
+        product.setQuantity(productDTO.getQuantity());
         return productRepository.save(product);
     }
 }
