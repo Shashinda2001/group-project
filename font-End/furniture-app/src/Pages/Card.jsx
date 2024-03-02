@@ -76,7 +76,7 @@ const ShoppingCart = () => {
   return (
       <div className='main_home'> 
           <h1   className='heading'>Shopping Cart</h1>
-     <div className='main_container'>
+     <div className='card_container'>
           <div className='selected_protects_container'>
          
         <table>
