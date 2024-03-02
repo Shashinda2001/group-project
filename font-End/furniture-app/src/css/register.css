@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
     list-style: none;
+    font-family: "Reem Kufi", sans-serif !important;
 
     
 }
@@ -27,8 +28,13 @@
 .main_container .left_div .img_div_box{
     position: absolute;
     top: 20vh;
-    left: 12vw;
+    left: 10vw;
     color: wheat;
+    width: 35vw;
+}
+.main_container .left_div .img_div_box h2{
+    font-size: 50px;
+    margin-bottom: 3rem;
 }
 .main_container .right_div{
     height: 100%;

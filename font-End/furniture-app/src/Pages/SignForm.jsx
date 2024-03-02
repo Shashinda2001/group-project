@@ -81,8 +81,8 @@ export default function SignForm() {
             <div className="left_div">
                 <img src={signcover} alt="logo img" />
                 <div className='img_div_box'>
-                    <h2>Turn Your Ideas In to Real...</h2>
-                    <p>start for free and get attractive with the community </p>
+                    <h2>Join for Exclusive Benefits...</h2>
+                    <p>Join our community, connect with enthusiasts, and access exclusive offers. Register now to turn your design dreams into reality!</p>
                 </div>
             </div>
 
@@ -108,7 +108,7 @@ export default function SignForm() {
                     <hr style={{ margin: "3vh 0" }} />
                 </form>
                 <div className='center_box'>
-                    back to <a style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }} onClick={() => { navigate('/LoginForm') }}> login</a>
+                    back to <a style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }} onClick={() => { navigate('/LoginForm') }}> Login</a>
                 </div>
             </div>
         </div>
