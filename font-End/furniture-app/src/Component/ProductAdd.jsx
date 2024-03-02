@@ -43,7 +43,84 @@ const ProductAdd = () => {
         <div className="col-md-6 offset-md-4 border roundedm p-4 mt-2 shadow ">
           <h2 className="text-center m-4 ">Add Product</h2>
           <form onSubmit={onSubmit}>
-            {/* Input fields */}
+            <div className="mb-3">
+              <label htmlFor="name" className="form-label">
+                Product Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter Product Name"
+                name="name"
+                value={name}
+                onChange={onInputChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="description" className="form-label">
+                Product Description
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter Product Description"
+                name="description"
+                value={description}
+                onChange={onInputChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="price" className="form-label">
+                Price
+              </label>
+              <input
+                type="number"
+                className="form-control"
+                placeholder="Enter Price"
+                name="price"
+                value={price}
+                onChange={onInputChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="quantity" className="form-label">
+                Quantity
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter Quantity"
+                name="quantity"
+                value={quantity}
+                onChange={onInputChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="category" className="form-label">
+                Category
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter Category"
+                name="category"
+                value={category}
+                onChange={onInputChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="image" className="form-label">
+                Image
+              </label>
+              <input
+                type="file"
+                className="form-control"
+                placeholder="Upload Image"
+                name="image"
+                value={image}
+                onChange={onInputChange}
+              />
+            </div>
             <button type="submit" className="btn btn-outline-primary">
               Submit
             </button>
