@@ -10,6 +10,7 @@ function AdminPanel() {
         <div>
  <ProductAdd/>
  <ProductList/>
+ <h1>code here</h1>
         </div>
         
      );
