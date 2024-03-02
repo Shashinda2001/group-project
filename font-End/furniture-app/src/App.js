@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from './Pages/HomePage';
 import SignForm from './Pages/SignForm';
-import Card from './Pages/Card';
+import  ShoppingCart from './Pages/ShoppingCart';
 import LoginForm from './Pages/LoginForm';
 import About from './Component/About';
 import Contact from './Component/Contact';
@@ -25,7 +25,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/AdminPanel" element={<AdminPanel/>} />
-          <Route path="/Card" element={<Card />} />
+          <Route path="/ShoppingCart" element={<ShoppingCart />} />
           <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/SignForm" element={<SignForm />} />
         </Routes>
