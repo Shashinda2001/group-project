@@ -1,264 +1,133 @@
-/* Product component style */
-*{
-    margin: 0;
-    padding: 0;
-    font-family: "Reem Kufi", sans-serif !important;
-  }
+import React, { useState } from 'react';
+import '../css/shoppingcart.css';
+
+
+const Product = ({ name,   image, price, onIncrease, onDecrease,quantity }) => (
+  <div style={{   margin: '10px', padding: '10px' }} className='product'>
   
-  
-  .main_container{
-    display: flex;
-    width: 100%;
-    margin-top: 20%;
-  }
-  .selected_protects_container{
-     
-    width: 50vw;
-    height: auto;
-    background-size: cover;  
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 50%;
-    padding: 10px;
-  }
-  
-   
-   
-  .totel_details{
-    flex: 1 0 50%;
-    position: relative;
-  }
-  .totel_prize{
-    position: absolute;
-    width: 70%;
-    padding: 10px;
-    margin-top: -70%;
-    margin-left: 10%;
-    height: auto;
-    border-radius: 10px;
-    background: -webkit-linear-gradient(90deg, rgba(176, 172, 181, 1) 0%, rgba(200, 188, 200, 1) 100%);
-    text-align: center;
-    /* opera 11.10+ */
-    background: -o-linear-gradient(90deg, rgba(176, 172, 181, 1) 0%, rgba(200, 188, 200, 1) 100%);
-  
-    /* ie 6-9 */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#C8BCC8', endColorstr='#B0ACB5', GradientType=0 );
-  
-    /* ie 10+ */
-    background: -ms-linear-gradient(90deg, rgba(176, 172, 181, 1) 0%, rgba(200, 188, 200, 1) 100%);
-  
-    /* global 94%+ browsers support */
-    background: linear-gradient(90deg, rgba(176, 172, 181, 1) 0%, rgba(200, 188, 200, 1) 100%);
-  }
-  
-  .totel_details h3,
-  .totel_details h1{
-    
-  font-size: 20px;
-  font-weight: bold;
-  
-  /* Color properties */
-  color: #333;
-  }
-  .selected_protects_container table thead tr th{
-    padding-left: 3%;
-    /* padding-right: -19%; */
-  }
-  .heading{
-       
-      font-style: italic;
-      font-weight: 600;
-      margin-top: 2%;
-      font-size: 45px;
-      line-height: 50px;
-      margin-left: 40%;
-       margin-bottom: 3%;
-      color:linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
-  }
-  .product {
-      
-       
-      margin: 1px;
-       display: flex; 
-       
-   }
-    
-    .increse_degrese_qu{
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-       
-      margin-left: 16%;
-    }
-  .prize_btn{
-    margin-left: 6%;
-  }
-   
-    .remove_btn{
-      margin-left: 16%;
-    }
-      
-    .increse,
-    .decrese,
-    .btn2 {
-        box-shadow:inset 0px 1px 0px 0px #97c4fe;
-        background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
-        background-color:#3d94f6;
-        border-radius:6px;
-        border:1px solid #337fed;
-        display:inline-block;
-        cursor:pointer;
-        color:#ffffff;
-        font-family:Arial;
-        font-size:12px;
-        font-weight:bold;
-        padding:1px 18px;
-        text-decoration:none;
-        text-shadow:0px 1px 0px #1570cd;
-        margin: 5px;
-      }
-     
-      .increse:hover,
-    .decrese:hover,
-    .btn2:hover {
-        background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
-        background-color:#1e62d0;
-      }
-      .increse:active,
-    .decrese:active
-    .btn2:active {
-        position:relative;
-        top:1px;
-      }
-      
-     
-     .selected_protect{
-      margin: 0;
-      /* text-align: left; */
-     }
-    
-    /* Shopping cart style */
-    .shopping-cart {
-      margin-top: 20px;
-      text-decoration: none;
-      
-    }
-     
-    .shopping-cart ul {
-      list-style-type: none;
-      padding: 0;
-   
-    }
-    
-    .shopping-cart li {
-      margin-bottom: 5px;
-      text-decoration: none;
-      list-style-type: none;
-      margin-left: 0;
-      display: flex;
-      
-    }
-    
-    
-  .btn1 {
-      /* box-shadow: 0px 10px 14px -7px #29bbff; */
-      background:linear-gradient(to bottom, #124e6e 5%, #000000 100%);
-      background-color:#124e6e;
-      border-radius:8px;
-      display:inline-block;
-      cursor:pointer;
-      color:#f5f5f5;
-      font-family:Arial;
-      font-size:20px;
-      font-weight:bold;
-      padding:13px 32px;
-      text-decoration:none;
-      text-shadow:0px 1px 0px #263666;
-  }
-  .btn1:hover {
-      background:linear-gradient(to bottom, #000000 5%, #124e6e 100%);
-      background-color:#000000;
-  }
-  .btn1:active {
-      position:relative;
-      top:1px;
-  }
-     
-      
-            
-      @media screen and (min-width: 1050px) {
-       
-        .increse,
-        .decrese{
-          font-size: 25px;
-        }
-        .product p{
-          font-size: 20px;
-        }
-        .product h3{
-          font-size: 25px;
-         
-        }
-        .increse,
-        .decrese,
-        .btn2{
-          height: 40px;
-          margin-top: 5%;
-        }
-      }
-      @media screen and (max-width:750px) {
-       
-        .increse,
-        .decrese{
-          font-size: 20px;
-        }
-  
-        .btn1{
-          font-size: 20px;
-          padding: 10px 20px 10px 20px;
-          width: 50%;
-          margin-left: 30%;
-        }
-        .product{
-           display: inline;
-          flex-direction: row; 
-          border: white;
-        }
-  
-        .btn1{
-          font-size: 15px;
-          margin: 0;
-          width: 90%;
-        }
-  
-        .btn2{
-          height: 28px;
-           margin-left: 20%;
-        }
-  
+              <td> 
+                   <img src={image} alt={name} style={{ width: '100px', height: '100px' }} />
+                   <h4>{name}</h4>
+              </td>
+              <td className='prize_btn'>
+                <p> ${price}</p>
+                </td>
+              <td className='increse_degrese_qu'> 
+                   <button onClick={onIncrease} className='increse'>+</button>
+                    <h3>  {quantity}</h3>
+                    <button onClick={onDecrease} className='decrese'>-</button>
+                    
+              </td>
+               <td className='remove_btn'>
+                   <button className='btn2'>Remove</button></td>
+             
+           
         
-        .decrese,.increse{
-          margin: 0;
-          width: 30%;
-          margin-left: 30%;
-        }
-        .product h3{
-            margin: 0;
-        }
+    
+    
+     
+     
+   
+ 
+    
+  </div>
+);
+
+ 
+
+
+const ShoppingCart = () => {
+  const [products, setProducts] = useState([
+    { id: 1, name: 'Sofa Bed development   ',  image: ' https://m.media-amazon.com/images/I/81d90JW-LfL.__AC_SX300_SY300_QL70_FMwebp_.jpg', price:40, quantity: 1 },
+    { id: 2, name: 'Kot chair  production',  image: 'https://m.media-amazon.com/images/I/91FH47-BbwL.__AC_SX300_SY300_QL70_FMwebp_.jpg', price: 50, quantity: 2 },
+    { id: 3, name: 'Modern Fabric Accent Chair',  image: 'https://m.media-amazon.com/images/I/61d2rgoL4CL.__AC_SX300_SY300_QL70_FMwebp_.jpg', price: 78, quantity: 1 },
+    { id: 4, name: ' A Frame Computer Desk',  image: 'https://m.media-amazon.com/images/I/71mJ-owgDlL.__AC_SX300_SY300_QL70_FMwebp_.jpg', price: 76, quantity: 1 },
+    { id: 5, name: 'Bathroom capboard',  image: 'https://m.media-amazon.com/images/I/71vAmA4XAXL._AC_SX679_.jpg', price: 20, quantity: 1 },
+  ]);
+
+  const calculateTotalPrice = () => {
+    let totalPrice = 0;
+    products.forEach(product => {
+      totalPrice += product.price * product.quantity;
+    });
+    return totalPrice;
+  };
+
   
-        .selected_protects_container table th{
-          display: none;
-        }
-  
-        .prize_btn p{
-          position: absolute;
-          margin-top: 10%;
-        }
-  
-        selected_protect
-  
-        .totel_prize{
-          width: 95%;
-        }
-      }
+
+  const handleIncreaseQuantity = (productId) => {
+    setProducts(products.map(product =>
+      product.id === productId ? { ...product, quantity: product.quantity + 1 } : product
+
+    ));
+
+    
+  };
+
+  const handleDecreaseQuantity = (productId) => {
+    setProducts(products.map(product =>
+      product.id === productId && product.quantity > 1 ? { ...product, quantity: product.quantity - 1 } : product
+    ));
+  };
+
+  const redirectToAnotherWebsite = () => {
+    window.location.href = '. /Checkout.jsx';
+  };
+  return (
+      <div className='main_home'> 
+          <h1   className='heading'>Shopping Cart</h1>
+     <div className='main_container'>
+          <div className='selected_protects_container'>
+         
+        <table>
+        <thead>
+          <tr>
+            <th  >Project </th>
+            <th  >Price</th>
+            <th className='title' style={{padding:0}}>Quantity</th>
+             
+          </tr>
+        </thead>
+            </table>
+            <table>
+              <tbody>
+                <tr>
+                {products.map(product => (
+              <Product
+                key={product.id}
+                name={product.name}
+                description={product.description}
+                image={product.image}
+                price={product.price}
+                onIncrease={() => handleIncreaseQuantity(product.id)}
+                onDecrease={() => handleDecreaseQuantity(product.id)}
+                quantity={product.quantity}
+              />
+            ))}
+                </tr>
+              
+              </tbody>
+            </table>
+         
+        </div>
+        <div className='totel_details'>
+           <div className='totel_prize'>
+           <h3 className='selected_protect'>Selected Products</h3>
+            <ul className='shopping-cart'>
+              {products.map(product => (
+                 <li key={product.id} style={{ display: 'flex', justifyContent: 'space-between' }}>
+                 <span >{product.name}</span>
+                 <span className='quantity'>Quantity:<span className='quantity1'> {product.quantity}</span></span>
+               </li>
+              ))}
+            </ul>
+            <h1>totle: ${calculateTotalPrice()}</h1>
+            <button className='btn1' onClick={redirectToAnotherWebsite } >CheckOut</button>
+           </div>
+        </div>
+     </div>
+     </div>
+  );
+};
+
+export default ShoppingCart;
