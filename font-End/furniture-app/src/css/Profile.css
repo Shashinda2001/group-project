@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     border: none;
+    font-family: "Reem Kufi", sans-serif !important;
 }
 .profileData {
     padding: 4rem;
