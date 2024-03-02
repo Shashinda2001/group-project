@@ -3,10 +3,12 @@ package com.furniture.service;
 import com.furniture.dto.ProductDTO;
 import com.furniture.entities.Product;
 import com.furniture.repositories.ProductRepository;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Data
 public class ProductService {
 
     @Autowired
