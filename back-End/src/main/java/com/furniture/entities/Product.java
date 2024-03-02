@@ -2,40 +2,30 @@ package com.furniture.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Builder
+@Data
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private int productId;
 
     private String name;
 
-    private double price;
+    private  int price;
 
-    public String getName() {
-        return name;
-    }
+    private int quantity;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    private  String imageName;
 
-    public double getPrice() {
-        return price;
-    }
+    private String productDescription;
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+    private String category;
+
 }

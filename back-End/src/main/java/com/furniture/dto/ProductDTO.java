@@ -1,23 +1,22 @@
 package com.furniture.dto;
 
+import lombok.Data;
+
+@Data
 public class ProductDTO {
 
+    private int productId;
+
     private String name;
-    private double price;
 
-    public String getName() {
-        return name;
-    }
+    private  int price;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    private int quantity;
 
-    public double getPrice() {
-        return price;
-    }
+    private  String imageName;
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+    private String productDescription;
+
+    private String category;
+
 }
