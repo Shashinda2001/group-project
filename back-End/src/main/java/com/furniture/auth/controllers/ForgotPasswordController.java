@@ -63,7 +63,7 @@ public class ForgotPasswordController {
         return ResponseEntity.ok("Email sent for verification!");
     }
 
-    @PostMapping("/verifyOtp/{otp}/{email}")
+    @GetMapping("/verifyOtp/{otp}/{email}")
     public ResponseEntity<String> verifyOtp(@PathVariable Integer otp, @PathVariable String email) {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Please provide a valid email!"));

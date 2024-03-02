@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../css/register.css';
 
-
 export default function ForgotPassword() {
     const [email, setEmail] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -15,11 +14,14 @@ export default function ForgotPassword() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`http://localhost:8080/forgotPassword/verifyMail/${email}`);
-            
+            const response = await axios.post(`http://localhost:8090/forgotPassword/verifyMail/${email}`);
+            // Assuming your backend returns a message in the response
+            setSuccessMessage(response.data.message);
+            setErrorMessage(''); // Clear any previous error messages
         } catch (error) {
             console.error('Error occurred while verifying email:', error);
             setErrorMessage('An unexpected error occurred.');
+            setSuccessMessage(''); // Clear any previous success messages
         }
     }
 
@@ -38,4 +40,3 @@ export default function ForgotPassword() {
         </div>
     );
 }
-
