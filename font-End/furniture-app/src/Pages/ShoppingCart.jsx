@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/card.css';
+import '../css/ShoppingCart.css';
 
 
 const Product = ({ name,   image, price, onIncrease, onDecrease,quantity }) => (
@@ -76,7 +76,7 @@ const ShoppingCart = () => {
   return (
       <div className='main_home'> 
           <h1   className='heading'>Shopping Cart</h1>
-     <div className='card_container'>
+     <div className='main_container'>
           <div className='selected_protects_container'>
          
         <table>
