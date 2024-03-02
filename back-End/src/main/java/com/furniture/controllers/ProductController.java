@@ -28,8 +28,9 @@ public class ProductController {
         productRepository.save(product);
     }
 
+  
+    @DeleteMapping("/product/delete")
     public void deleteProduct(@RequestParam int productId){
         productRepository.deleteById(productId);
     }
-
 }
