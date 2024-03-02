@@ -68,7 +68,7 @@ const NavBar = () => {
 
           {(role === "USER" || role === "") && (
             <>
-              <a onClick={() => navigate("/")}>
+              <a onClick={() => navigate("/card")}>
                 <BsCart2 className="navbar-cart-icon" />
               </a>
 
