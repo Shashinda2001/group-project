@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/ShoppingCart.css';
+import '../css/shoppingcart.css';
 
 
 const Product = ({ name,   image, price, onIncrease, onDecrease,quantity }) => (
