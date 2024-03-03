@@ -6,17 +6,20 @@ export default function ForgotPassword() {
     const [email, setEmail] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
+    const [registrationSuccess, setRegistrationSuccess] = useState(false);
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     }
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post(`http://localhost:8090/forgotPassword/verifyMail/${email}`);
             // Assuming your backend returns a message in the response
-            setSuccessMessage(response.data.message);
+            setRegistrationSuccess(true);
+            setSuccessMessage(response.data);
             setErrorMessage(''); // Clear any previous error messages
         } catch (error) {
             console.error('Error occurred while verifying email:', error);
@@ -28,6 +31,7 @@ export default function ForgotPassword() {
     return (
         <div style={{ textAlign: 'center', marginTop: '20px' }}>
             <h2>Forgot Password</h2>
+            {registrationSuccess && <div className="success" style={{ color: 'green' }}>Verification email sent</div>} {/* Display success message */}
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <div style={{ marginBottom: '10px' }}>
                     <label>Email:</label>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../Assets/Logo.svg";
 import { BsCart2 } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import {
@@ -19,6 +20,7 @@ import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import HeartBrokenRoundedIcon from "@mui/icons-material/HeartBrokenRounded";
+import Search from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import AdminPanel from "../Pages/AdminPanel";
@@ -42,10 +44,11 @@ const NavBar = () => {
   }, []);
 
   const handleLogout = () => {
-    // Remove token from localStorage
     localStorage.removeItem("token");
-    // Redirect to login page
     navigate("/LoginForm");
+  };
+  const displaySearch = () => {
+    
   };
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -69,7 +72,8 @@ const NavBar = () => {
           <a onClick={() => navigate("/About")}>About</a>
           <a onClick={() => navigate("/Testimonial")}>Testimonials</a>
           <a onClick={() => navigate("/Contact")}>Contact</a>
-
+          <a href="" target="_self" onClick={displaySearch()} aria-disabled="true"><BsSearch/></a> 
+          
           {(role === "USER" || role === "") && (
             <>
               <a onClick={() => navigate("/ShoppingCart")}>
@@ -107,6 +111,7 @@ const NavBar = () => {
             >
               Login Now
             </button>
+            
           )}
         </div>
         <div className="navbar-menu-container">
@@ -136,7 +141,9 @@ const NavBar = () => {
             <Divider />
           </Box>
         </Drawer>
+        
       </nav>
+      
     </div>
   );
 };
