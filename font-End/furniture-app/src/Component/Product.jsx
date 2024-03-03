@@ -1,10 +1,9 @@
-<<<<<<< Updated upstream
+ 
 import item from '../Assets/chair 3.png';
 import item2 from '../Assets/chair-2.png';
 import item3 from '../Assets/Chair.png';
 
-=======
->>>>>>> Stashed changes
+ 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../css/ProductCard.css'; // Import your CSS file here
@@ -30,8 +29,7 @@ function Product() {
 
     fetchProducts();
   }, []);
-
-<<<<<<< Updated upstream
+ 
     return ( 
 <div>
 
@@ -41,8 +39,8 @@ function Product() {
       </div>
     </nav>
 <div className="container mt-5">
-    {/* /// */}
-=======
+  
+ 
   return (
     <div>
       <div className="container mt-5">
@@ -63,7 +61,7 @@ function Product() {
   backgroundSize: 'cover'
 }}><img src={testpoto} alt="Chair" />
 </div>
->>>>>>> Stashed changes
+ 
 
               <div className="bottom">
                 <div className="left">
@@ -81,7 +79,7 @@ function Product() {
           </div>
         
       ))}
-<<<<<<< Updated upstream
+ 
 
   
 
@@ -92,11 +90,11 @@ function Product() {
 </div>
 
      );
-=======
+ 
       </div>
     </div>
   );
->>>>>>> Stashed changes
+ 
 }
 
 export default Product;
