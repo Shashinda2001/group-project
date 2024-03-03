@@ -1,6 +1,7 @@
 import item from '../Assets/chair 3.png';
 import item2 from '../Assets/chair-2.png';
 import item3 from '../Assets/Chair.png';
+import '../css/ProductCard.css';
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'; 
@@ -23,13 +24,14 @@ function Product() {
     return ( 
 <div>
 
-<nav className="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
-      <div className="container-fluid d-flex justify-content-center">
-        <a className="navbar-brand text-center" href="#">Living Room</a>
-      </div>
-    </nav>
-<div className="container mt-5">
+
+<div   className="container mt-5">
     {/* /// */}
+    <div className="navbar navbar-expand-lg navbar-light bg-primary mb-4" style={{backgroundColor: '#0000BF'}}>
+  <div className="container-fluid d-flex justify-content-center">
+    <a className="navbar-brand text-center" href="#">Living Room</a>
+  </div>
+</div>
 
 {/* //// */}
   <div className="row">
@@ -57,12 +59,89 @@ function Product() {
  </div>
  
       ))}
-
-  
-
+      {/* ///// */}
+      
+{/* ///// */}
   </div>
 </div>
+{/* /////////// */}
+<div style={{display:'flex',}}>
+<div className="wrapper">
+      <div className="container">
+        <div className="top" style={{ height: '60%',
+    width: '100%',
+    background: 'url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg) no-repeat center center',
+    backgroundSize: 'cover'}}></div>
+        <div className="bottom">
+          <div className="left">
+            <div className="details">
+              <h1>Chair</h1>
+              <p>£250</p>
+            </div>
+            <button type="button" class="btn btn-outline-primary">add to cart</button>      
+             </div>
+         
+        </div>
+      </div>
+      <div className="inside">
+        <div className="icon"><i className="material-icons">info_outline</i></div>
+         
+      </div>
+    </div>
 
+{/* //////////////////// */}
+{/* /////////// */}
+<div className="wrapper">
+      <div className="container">
+        <div className="top" style={{ height: '60%',
+    width: '100%',
+    background: 'url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg) no-repeat center center',
+    backgroundSize: 'cover'}}></div>
+        <div className="bottom">
+          <div className="left">
+            <div className="details">
+              <h1>Chair</h1>
+              <p>£250</p>
+            </div>
+            <button cl style={{backgroundColor: '#ADD8E6', color: 'white', padding: '10px 20px', border: 'none', borderRadius: '5px', cursor: 'pointer'}}>Click me</button>
+          </div>
+         
+        </div>
+      </div>
+      <div className="inside">
+        <div className="icon"><i className="material-icons">info_outline</i></div>
+         
+      </div>
+    </div>
+
+{/* //////////////////// */}
+{/* /////////// */}
+
+<div className="wrapper">
+      <div className="container">
+        <div className="top" style={{ height: '60%',
+    width: '100%',
+    background: 'url(https://s-media-cache-ak0.pinimg.com/736x/49/80/6f/49806f3f1c7483093855ebca1b8ae2c4.jpg) no-repeat center center',
+    backgroundSize: 'cover'}}></div>
+        <div className="bottom">
+          <div className="left">
+            <div className="details">
+              <h1>Chair</h1>
+              <p>£250</p>
+            </div>
+            <button cl style={{backgroundColor: '#ADD8E6', color: 'white', padding: '10px 20px', border: 'none', borderRadius: '5px', cursor: 'pointer'}}>Click me</button>
+          </div>
+         
+        </div>
+      </div>
+      <div className="inside">
+        <div className="icon"><i className="material-icons">info_outline</i></div>
+         
+      </div>
+    </div>
+    </div>
+
+{/* //////////////////// */}
 
 </div>
 

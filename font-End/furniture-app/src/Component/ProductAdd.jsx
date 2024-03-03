@@ -7,14 +7,14 @@ const ProductAdd = () => {
 
   const [product, setProduct] = useState({
     name: "",
-    description: "",
+    productDescription: "",
     price: "",
     quantity: "",
     category: "",
-    image: "",
+    imageName: "",
   });
 
-  const { name, description, price, quantity, category, image } = product;
+  const { name, productDescription, price, quantity, category, imageName } = product;
 
   const onInputChange = (e) => {
     setProduct({ ...product, [e.target.name]: e.target.value });
@@ -24,12 +24,15 @@ const ProductAdd = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token'); // Retrieve token from localStorage
+      console.log(token);
       const config = {
         headers: {
           'Authorization': `Bearer ${token}` // Include token in the request headers
         }
       };
-      await axios.post("http://localhost:8090/product/add", product, config); // Pass config as the third argument
+
+      console.log('Request Config:', config);
+      await axios.post("http://localhost:8090/api/products/add", product, config); // Pass config as the third argument
       navigate("/");
     } catch (error) {
       console.error("Error submitting product:", error);
@@ -57,15 +60,15 @@ const ProductAdd = () => {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="description" className="form-label">
+              <label htmlFor="productDescription" className="form-label">
                 Product Description
               </label>
               <input
                 type="text"
                 className="form-control"
                 placeholder="Enter Product Description"
-                name="description"
-                value={description}
+                name="productDescription"
+                value={productDescription}
                 onChange={onInputChange}
               />
             </div>
@@ -109,15 +112,15 @@ const ProductAdd = () => {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="image" className="form-label">
+              <label htmlFor="imageName" className="form-label">
                 Image
               </label>
               <input
                 type="file"
                 className="form-control"
                 placeholder="Upload Image"
-                name="image"
-                value={image}
+                name="imageName"
+                value={imageName}
                 onChange={onInputChange}
               />
             </div>
