@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
@@ -22,6 +24,15 @@ public class ProductController {
         Product product = productService.addProduct(productDTO);
         return new ResponseEntity<>(product, HttpStatus.CREATED);
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Product>> getAllProducts() {
+        List<Product> products = productService.getAllProducts();
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+
+
 
     // Other endpoints can be added similarly
 }
