@@ -11,6 +11,7 @@ import Contact from './Component/Contact';
 import Testimonial from './Component/Testimonial';
 import ForgotPassword from './Pages/ForgotPassword';
 import AdminPanel from './Pages/AdminPanel';
+import Profile from './Pages/Profile';
  
  
 
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/About" element={<About />} />
+          <Route path="/Profile" element={<Profile/>} />
           <Route path="/Testimonial" element={<Testimonial />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />

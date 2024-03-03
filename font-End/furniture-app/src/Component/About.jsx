@@ -30,6 +30,10 @@ const About = () => {
           </button>
         </div>
       </div>
+
+
+       
+       
     </div>
   );
 };
@@ -64,5 +68,3 @@ export default About;
 //   );
 // }
 
-
- 
