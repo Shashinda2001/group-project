@@ -23,6 +23,9 @@ import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import AdminPanel from "../Pages/AdminPanel";
 import ShoppingCart from "../Pages/ShoppingCart";
+import { FaUserShield } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
+import Profile from '../Pages/Profile';
 
 const NavBar = () => {
   const [role, setRole] = useState("");
@@ -76,13 +79,17 @@ const NavBar = () => {
               <a href="hh">
                 <BsHeart className="navbar-cart-icon" />
               </a>
+
+                      <a onClick={() => navigate("/Profile")}>
+                    <FaUser />
+                    </a>
             </>
           )}
 
           {role === "ADMIN" && (
-            <a onClick={() => navigate("/AdminPanel")}>
-              <BsCart2 className="navbar-cart-icon" />
-            </a>
+             <a onClick={() => navigate("/AdminPanel")}>
+             <FaUserShield />
+           </a>
           )}
 
           {role !== "" && (
