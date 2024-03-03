@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.Instant;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Objects;
 import java.util.Random;
@@ -40,48 +41,64 @@ public class ForgotPasswordController {
 
     // send mail for email verification
     @PostMapping("/verifyMail/{email}")
-    public ResponseEntity<String> verifyEmail(@PathVariable String email) {
-        User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("Please provide an valid email!" + email));
+    public ResponseEntity<?> verifyEmail(@PathVariable String email) {
+        try {
+            User user = userRepository.findByEmail(email)
+                    .orElseThrow(() -> new UsernameNotFoundException("Please provide a registered email!!"));
 
-        int otp = otpGenerator();
-        MailBody mailBody = MailBody.builder()
-                .to(email)
-                .text("This is the OTP for your Forgot Password request : " + otp)
-                .subject("OTP for Forgot Password request")
-                .build();
+            int otp = otpGenerator();
+            MailBody mailBody = MailBody.builder()
+                    .to(email)
+                    .text("This is the OTP for your Forgot Password request : " + otp)
+                    .subject("OTP for Forgot Password request")
+                    .build();
 
-        ForgotPassword fp = ForgotPassword.builder()
-                .otp(otp)
-                .expirationTime(new Date(System.currentTimeMillis() + 60 * 60 * 1000))
-                .user(user)
-                .build();
+            ForgotPassword fp = ForgotPassword.builder()
+                    .otp(otp)
+                    .expirationTime(new Date(System.currentTimeMillis() + 60 * 60 * 1000))
+                    .user(user)
+                    .build();
 
-        emailService.sendSimpleMessage(mailBody);
-        forgotPasswordRepository.save(fp);
+            emailService.sendSimpleMessage(mailBody);
+            forgotPasswordRepository.save(fp);
 
-        return ResponseEntity.ok("Email sent for verification!");
-    }
-
-    @GetMapping("/verifyOtp/{otp}/{email}")
-    public ResponseEntity<String> verifyOtp(@PathVariable Integer otp, @PathVariable String email) {
-        User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("Please provide a valid email!"));
-
-        ForgotPassword fp = forgotPasswordRepository.findByOtpAndUser(otp, user)
-                .orElseThrow(() -> new RuntimeException("Invalid OTP for email: " + email));
-
-        if (fp.getExpirationTime().before(Date.from(Instant.now()))) {
-            forgotPasswordRepository.deleteById(fp.getFpid());
-            return new ResponseEntity<>("OTP has expired!", HttpStatus.EXPECTATION_FAILED);
+            return ResponseEntity.ok("Email sent for verification!");
+        } catch (UsernameNotFoundException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Collections.singletonMap("error", ex.getMessage()));
+        } catch (Exception ex) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Collections.singletonMap("error", "An unexpected error occurred."));
         }
-
-        // OTP verified, update user's verification status
-        user.setVerified(true);
-        userRepository.save(user); // Save the changes to the database
-
-        return ResponseEntity.ok("OTP verified! User is now verified.");
     }
+
+
+    @PostMapping("/verifyOtp/{otp}/{email}")
+    public ResponseEntity<?> verifyOtp(@PathVariable Integer otp, @PathVariable String email) {
+        try {
+            User user = userRepository.findByEmail(email)
+                    .orElseThrow(() -> new UsernameNotFoundException("Please provide a registered email!"));
+
+            ForgotPassword fp = forgotPasswordRepository.findByOtpAndUser(otp, user)
+                    .orElseThrow(() -> new RuntimeException("Invalid OTP for email: " + email));
+
+            if (fp.getExpirationTime().before(Date.from(Instant.now()))) {
+                forgotPasswordRepository.deleteById(fp.getFpid());
+                return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(Collections.singletonMap("error", "OTP has expired!"));
+            }
+
+            // OTP verified, update user's verification status
+            user.setVerified(true);
+            userRepository.save(user); // Save the changes to the database
+
+            return ResponseEntity.ok("OTP verified! User is now verified.");
+        } catch (UsernameNotFoundException ex) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Collections.singletonMap("error", ex.getMessage()));
+        } catch (RuntimeException ex) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Collections.singletonMap("error", ex.getMessage()));
+        } catch (Exception ex) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Collections.singletonMap("error", "An unexpected error occurred."));
+        }
+    }
+
 
 
 
