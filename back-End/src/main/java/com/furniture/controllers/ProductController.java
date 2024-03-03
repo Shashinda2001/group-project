@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/products")
+@CrossOrigin("http://localhost:3000")
 public class ProductController {
 
     @Autowired
     private ProductService productService;
 
     @PostMapping("/add")
-//    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<Product> addProduct(@RequestBody ProductDTO productDTO) {
         Product product = productService.addProduct(productDTO);
         return new ResponseEntity<>(product, HttpStatus.CREATED);

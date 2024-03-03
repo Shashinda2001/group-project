@@ -9,7 +9,7 @@ public class ProductDTO {
 
     private String name;
 
-    private  int price;
+    private double price;
 
     private int quantity;
 
@@ -18,5 +18,6 @@ public class ProductDTO {
     private String productDescription;
 
     private String category;
+
 
 }
