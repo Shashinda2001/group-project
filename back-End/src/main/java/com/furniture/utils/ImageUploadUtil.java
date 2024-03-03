@@ -12,7 +12,7 @@ import java.nio.file.StandardCopyOption;
 public class ImageUploadUtil {
     public static void saveImage(String uploadDir, String fileName, MultipartFile multipartFile) throws IOException {
 
-        Path uploadPath= Paths.get("G:\\new folder\\group-project\\back-End\\src\\main\\resources\\Images"+uploadDir);
+        Path uploadPath= Paths.get("C:\\Users\\mamam\\OneDrive\\Desktop\\project_\\group-project\\back-End\\src\\main\\resources\\images"+uploadDir);
         if(!Files.exists(uploadPath)){
             Files.createDirectories(uploadPath);
         }

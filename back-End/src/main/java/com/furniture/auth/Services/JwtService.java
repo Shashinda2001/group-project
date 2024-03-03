@@ -51,6 +51,8 @@ public class JwtService {
         // Create additional claims for userRole and email
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", user.getRole().toString());
+        claims.put("userId", user.getUserId().toString());
+        //i want to add user id to the jwt
 
 
         // Generate token with additional claims
