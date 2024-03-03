@@ -28,6 +28,7 @@ import ShoppingCart from "../Pages/ShoppingCart";
 import { FaUserShield } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
 import Profile from '../Pages/Profile';
+import CartItem from "../Pages/CartItem";
 
 const NavBar = () => {
   const [role, setRole] = useState("");
@@ -76,7 +77,7 @@ const NavBar = () => {
           
           {role === "USER"  && (
             <>
-              <a onClick={() => navigate("/ShoppingCart")}>
+              <a onClick={() => navigate("/CartItem")}>
                 <BsCart2 className="navbar-cart-icon" />
               </a>
 
@@ -92,7 +93,7 @@ const NavBar = () => {
 
 {role === ""  && (
             <>
-              <a onClick={() => navigate("/ShoppingCart")}>
+              <a onClick={() => navigate("/")}>
                 <BsCart2 className="navbar-cart-icon" />
               </a>
 

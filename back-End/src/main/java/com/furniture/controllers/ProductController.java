@@ -31,13 +31,5 @@ public class ProductController {
         List<Product> products = productService.getAllProducts();
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
-
-
-<<<<<<< HEAD
-=======
-
-
-    // Other endpoints can be added similarly
->>>>>>> 743e71dab7f953222f5b8fc9793b2794b7c40fe5
 }
 

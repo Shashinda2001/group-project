@@ -99,5 +99,6 @@ button:hover {
     top: 50%;
     color: white;
     transform: translate(50%, -50%);
-    opacity: 1;
+    opacity: 1;
+
 }

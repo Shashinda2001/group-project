@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/Cart")
 @CrossOrigin("http://localhost:3000")
@@ -24,7 +26,10 @@ public class CartController {
         return new ResponseEntity<>(cartItem, HttpStatus.CREATED);
     }
 
-
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<CartItem>> findCartItemsByUserId(@PathVariable Long userId){
+        List<CartItem> cartItems = cartService.findCartItemsByUserId(userId);
+        return new ResponseEntity<>(cartItems, HttpStatus.OK);}
 
 
 

@@ -12,6 +12,7 @@ import Testimonial from './Component/Testimonial';
 import ForgotPassword from './Pages/ForgotPassword';
 import AdminPanel from './Pages/AdminPanel';
 import Profile from './Pages/Profile';
+import CartItem from './Pages/CartItem';
  
  
 
@@ -30,6 +31,8 @@ function App() {
           <Route path="/ShoppingCart" element={<ShoppingCart />} />
           <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/SignForm" element={<SignForm />} />
+          <Route path="/CartItem" element={<CartItem />} />
+
         </Routes>
       </Router>
     </div>
