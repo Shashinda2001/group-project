@@ -74,7 +74,7 @@ const NavBar = () => {
           <a onClick={() => navigate("/Contact")}>Contact</a>
           <a href="" target="_self" onClick={displaySearch()} aria-disabled="true"><BsSearch/></a> 
           
-          {(role === "USER" || role === "") && (
+          {role === "USER"  && (
             <>
               <a onClick={() => navigate("/ShoppingCart")}>
                 <BsCart2 className="navbar-cart-icon" />
@@ -87,6 +87,20 @@ const NavBar = () => {
                       <a onClick={() => navigate("/Profile")}>
                     <FaUser />
                     </a>
+            </>
+          )}
+
+{role === ""  && (
+            <>
+              <a onClick={() => navigate("/ShoppingCart")}>
+                <BsCart2 className="navbar-cart-icon" />
+              </a>
+
+              <a href="hh">
+                <BsHeart className="navbar-cart-icon" />
+              </a>
+
+                       
             </>
           )}
 
