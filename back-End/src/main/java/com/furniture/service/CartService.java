@@ -28,6 +28,7 @@ public class CartService {
     }
 
 
-
-
+    public List<CartItem> findCartItemsByUserId(Long userId) {
+        return cartItemRepository.findByUserId(userId);
+    }
 }

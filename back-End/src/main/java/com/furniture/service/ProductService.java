@@ -27,17 +27,14 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-<<<<<<< HEAD
 
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();}
-=======
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
 
-
-
->>>>>>> 743e71dab7f953222f5b8fc9793b2794b7c40fe5
 }
+
+
+
+

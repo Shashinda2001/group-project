@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../css/shoppingcart.css';
 
+ 
+
 
 const Product = ({ name,   image, price, onIncrease, onDecrease,quantity }) => (
   <div style={{   margin: '10px', padding: '10px' }} className='product'>
@@ -37,6 +39,7 @@ const Product = ({ name,   image, price, onIncrease, onDecrease,quantity }) => (
 
 
 const ShoppingCart = () => {
+  
   const [products, setProducts] = useState([
     { id: 1, name: 'Sofa Bed development   ',  image: ' https://m.media-amazon.com/images/I/81d90JW-LfL.__AC_SX300_SY300_QL70_FMwebp_.jpg', price:40, quantity: 1 },
     { id: 2, name: 'Kot chair  production',  image: 'https://m.media-amazon.com/images/I/91FH47-BbwL.__AC_SX300_SY300_QL70_FMwebp_.jpg', price: 50, quantity: 2 },
