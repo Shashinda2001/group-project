@@ -19,8 +19,8 @@ useEffect(() => {
     if (token) {
       const decoded = jwtDecode(token);
       setCkeck(decoded.role)
-      if(check!=="ADMIN") 
-      navigate("/");
+      // if(check!=="ADMIN") 
+      // navigate("/");
     }
     else{
         navigate("/");
