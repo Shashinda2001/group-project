@@ -15,4 +15,4 @@ Our e-commerce backend is a robust and secure solution that provides API endpoin
 
 ## Source Code
 
-To explore the source code of the E-commerce Backend Application, navigate to the ""backend" branch of this repository.
+To explore the source code of the E-commerce Backend Application, navigate to the ""back-end" branch of this repository.
